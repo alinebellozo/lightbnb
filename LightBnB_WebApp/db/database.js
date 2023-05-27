@@ -149,7 +149,7 @@ const getAllProperties = (options, limit = 10) => {
 
   if (options.owner_id) {
     queryParams.push(options.owner_id);
-    if (queryParams.length === $1) {
+    if (queryParams.length === 1) {
       queryString += `WHERE owner_id = $${queryParams.length}`;
     } else {
       queryString += `AND owner_id = $${queryParams.length}`;
@@ -160,14 +160,14 @@ const getAllProperties = (options, limit = 10) => {
     queryParams.push(
       options.minimum_price_per_night * 100
     );
-    if (queryParams.length === $2) {
+    if (queryParams.length === 2) {
       queryString += `WHERE cost_per_night >= $${queryParams.length}`;
     }
   };
 
   if (options.maximum_price_per_night) {
     queryParams.push(options.maximum_price_per_night * 100);
-    if (queryParams.length === $3) {
+    if (queryParams.length === 3) {
       queryString += `WHERE cost_per_night <= $${queryParams.length}`;
     }
   }
