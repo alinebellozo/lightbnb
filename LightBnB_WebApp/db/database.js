@@ -24,7 +24,7 @@ const getUserWithEmail = (email) => {
   .query(`
   SELECT *
   FROM users
-  WHERE users.email = $1;
+  WHERE users.email = $1
   `,
   [email]
   )
@@ -51,7 +51,7 @@ const getUserWithId = function (id) {
   .query(`
   SELECT *
   FROM users
-  WHERE users.id = $1;
+  WHERE users.id = $1
   `,
   [id])
   .then((result) => {
@@ -79,7 +79,7 @@ const addUser = function (user) {
   .query(`
   INSERT INTO users (name, email, password)
   VALUES ($1, $2, $3)
-  RETURNING *;
+  RETURNING *
   `,
   objValues
   )
@@ -109,7 +109,7 @@ const getAllReservations = function (guest_id, limit = 10) {
   FROM reservations
   JOIN properties ON reservations.property_id = properties.id
   WHERE guest_id = $1
-  LIMIT $2;
+  LIMIT $2
   `,
   [guest_id, limit]
   )
@@ -138,7 +138,7 @@ const getAllProperties = (options, limit = 10) => {
   let queryString = `
   SELECT properties.*, AVG(property_reviews.rating) AS average_rating
   FROM properties
-  JOIN property_reviews ON properties.id = property_id;
+  JOIN property_reviews ON properties.id = property_id
   `;
 
   // 3. Check if the filters have been passed in as an option
@@ -182,8 +182,8 @@ const getAllProperties = (options, limit = 10) => {
   
   queryString += `
   GROUP BY properties.id
-  ORDER BY cost_per_night;
-  LIMIT $${queryParams.length};
+  ORDER BY cost_per_night
+  LIMIT $${queryParams.length}
   `;
   
   // 5. Console log everything just to make sure we've done it right
@@ -225,7 +225,7 @@ const addProperty = function (property) {
   .query(`
   INSERT INTO properties (owner_id, title, description, thumbnail_photo_url, cover_photo_url, cost_per_night, street, city, province, post_code, country, parking_spaces, number_of_bathrooms, number_of_bedrooms)
   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
-  RETURNING *;
+  RETURNING *
   `,
   objValues
   )
