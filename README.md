@@ -4,10 +4,10 @@ A simple multi-page AirBnB clone that uses a server-side JavaScript to display t
 
 ## Final Product
 
-!["Screenshot of Homepage"]()
-!["Screenshot of Sign up page"]()
-!["Screenshot of Login page"]()
-!["Screenshot of Mt reservations page"]()
+!["Screenshot of Homepage"](https://github.com/alinebellozo/lightbnb/blob/master/LightBnB_WebApp/images/homepage.png)
+!["Screenshot of Sign up page"](https://github.com/alinebellozo/lightbnb/blob/master/LightBnB_WebApp/images/signup-page.png)
+!["Screenshot of Login page"](https://github.com/alinebellozo/lightbnb/blob/master/LightBnB_WebApp/images/login-page.png)
+!["Screenshot of Mt reservations page"](https://github.com/alinebellozo/lightbnb/blob/master/LightBnB_WebApp/images/signup-page.png)
 
 ## Dependencies
 - bcrypt
